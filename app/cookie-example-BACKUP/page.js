@@ -10,7 +10,7 @@ export default async function SetCookiePage() {
 
   return (
     <>
-      {/* <div>Cookie Value: {testCookie?.value}</div> */}
+      <div>Cookie Value: {testCookie?.value}</div>
       <SetCookieForm />
     </>
   );

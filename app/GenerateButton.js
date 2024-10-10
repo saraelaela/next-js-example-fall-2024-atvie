@@ -13,16 +13,17 @@ export default function GenerateButton() {
   const router = useRouter();
 
   useEffect(() => {
-    const allCookies = document.cookie;
-
-    console.log(allCookies);
-
+    // const allCookies = document.cookie
+    //   .split('; ')
+    //   .find((row) => row.startsWith('count='))
+    //   ?.split('=')[1];
     const buttonColor = document.cookie
       .split('; ')
       .find((row) => row.startsWith('buttonColor='))
       ?.split('=')[1];
 
     console.log(buttonColor);
+    // console.log('allCookies:', allCookies);
 
     setColor(
       buttonColor || `#${Math.floor(Math.random() * 16777215).toString(16)}`,

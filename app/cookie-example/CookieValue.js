@@ -5,13 +5,12 @@ import SetCookieForm from './SetCookieForm';
 
 // We use Next.js Cookies from next/headers because of server side cookies (HTTP)
 
-export default async function SetCookiePage() {
+export default async function CookieValue() {
   const testCookie = (await cookies()).get('testCookie');
 
   return (
     <>
-      {/* <div>Cookie Value: {testCookie?.value}</div> */}
-      <SetCookieForm />
+      <div> ({testCookie?.value})</div>
     </>
   );
 }

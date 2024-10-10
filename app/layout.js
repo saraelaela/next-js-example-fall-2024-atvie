@@ -1,6 +1,8 @@
 import './globals.scss';
 import localFont from 'next/font/local';
 import Link from 'next/link';
+import CookieValue from './cookie-example/CookieValue';
+import CookieCart from './CookieCart';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -34,11 +36,18 @@ export default function RootLayout({ children }) {
 
               {/* This is optimized */}
               <Link href="/">Home</Link>
-              <Link href="/animals">Animals</Link>
-              <Link href="/fruits">Fruits</Link>
+              {/* <Link href="/animals">Animals</Link> */}
+              {/* <Link href="/fruits">Fruits</Link> */}
               <Link href="/about">About</Link>
+              <Link href="/items">Items</Link>
+              <Link href="/cart">
+                {' '}
+                Cart
+                <CookieValue />{' '}
+              </Link>
+              <Link href="/cookie-example">Cookies </Link>
             </nav>
-            {Math.floor(Math.random() * 10)}
+            {/* {Math.floor(Math.random() * 10)} */}
           </div>
         </header>
         <main>{children}</main>
