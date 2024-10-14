@@ -21,3 +21,10 @@ function connectOneTimeToDatabase() {
 
 // Connect to PostgreSQL
 export const sql = connectOneTimeToDatabase();
+
+// export const sql = postgres({
+//   transform: {
+//     ...postgres.camel,
+//     undefined: null,
+//   },
+// });

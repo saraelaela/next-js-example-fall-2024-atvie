@@ -1,15 +1,16 @@
 :root {
   --color-background: rgb(255, 255, 255);
   --color-layout: rgb(255, 255, 255);
+  margin: 0 auto;
+  width: 100vw;
 }
 
 body {
-  margin: 0;
   font-family: -apple-system, 'system-ui', 'Segoe UI', 'Noto Sans', Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   background: var(--color-background);
   // Avoid fixed footer obscuring content
-  padding-bottom: 50px;
+  // padding-bottom: 50px;
 }
 
 a {
@@ -18,20 +19,24 @@ a {
 
 nav {
   width: 100vw;
-  height: 4rem;
+  height: 2rem;
   background: var(--color-layout);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  bottom: 0;
+  padding-bottom: 1rem;
+  position: absolute;
+  border-bottom: 1px solid black;
 
   > div {
     display: flex;
-    align-items: center;
+    // align-items: center;
     gap: 0.625rem;
   }
 
   > div a {
-    margin: 0.25rem;
+    // margin: 0.25rem;
   }
 }
 

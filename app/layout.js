@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
               <Link href="/cart">
                 {' '}
                 Cart
-                <CookieValue />{' '}
+                <CookieValue />
               </Link>
               <Link href="/cookie-example">Cookies </Link>
             </nav>

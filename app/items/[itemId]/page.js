@@ -2,15 +2,18 @@ import { count } from 'console';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
-import { getItem } from '../../../database/items';
+import { getItemsInsecure } from '../../../database/items';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import SetCookieForm from '../../cookie-example/SetCookieForm';
-import CookieCart from '../../CookieCart';
-import ItemCommentForm from './ItemCommentForm';
+
+// import Items from '../page';
+
+// import CookieCart from '../../CookieCart';
+// import ItemCommentForm from './ItemCommentForm';
 
 export default async function SingleItemPage(props) {
-  const item = getItem(Number((await props.params).itemId));
+  const item = await getItemsInsecure(Number((await props.params).itemId));
 
   const itemCommentsCookie = await getCookie('itemsComments', count);
 
@@ -24,10 +27,10 @@ export default async function SingleItemPage(props) {
     itemComments = [];
   }
 
-  const itemCommentToDisplay = itemComments.find((itemComment) => {
-    return itemComment.id === item.id;
-  });
-
+  // const itemCommentToDisplay = itemComments.find((itemComment) => {
+  //   return itemComment.id === item.id;
+  // });
+  console.log('items', item);
   return (
     <>
       <Image
