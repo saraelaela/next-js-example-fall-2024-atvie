@@ -1,0 +1,67 @@
+.root {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemHeadline {
+  margin: 0 0 5vw 0;
+
+  font-size: 10vw;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  width: 100%;
+  min-height: 80vh;
+  // background-color: black;
+  // color: white;
+  text-transform: uppercase;
+  padding: 0 0 5rem 0;
+}
+
+.itemWrapper {
+  display: flex;
+  max-height: 50vw;
+  overflow-y: hidden;
+  position: sticky;
+  top: 15rem;
+  width: 100%;
+}
+
+.itemContainer {
+  padding-top: 1rem;
+  width: 100%;
+  align-self: first baseline;
+}
+
+.itemName {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0.5rem 0;
+  background-color: white;
+  z-index: 10;
+
+  a {
+    text-decoration-line: none;
+  }
+}
+
+.imageWrapper {
+  display: flex; /* Allows easier centering and alignment */
+  justify-content: center; /* Centers the image */
+  align-items: center;
+  width: 100%; /* Ensure it spans the width of the parent */
+  max-height: 50vw; /* Set a max-height so the image doesn’t grow too large */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.itemImage {
+  width: 100%;
+  height: auto;
+  z-index: -10; /* Adjust width to fit the container
+  */
+  // object-fit: cover; /* Ensures it maintains aspect ratio and fills the container */
+  // object-position: 10% 100%; /* This positions the image content */
+}
