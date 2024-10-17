@@ -2,21 +2,31 @@ import { count } from 'console';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
-import {
-  getItemId,
-  getItemInsecure,
-  getItemsInsecure,
-} from '../../../database/items';
+import { getItemInsecure } from '../../../database/items';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import SetCookieForm from '../../cookie-example/SetCookieForm';
 
 export default async function SingleItemPage(props) {
+
+
   const itemId = (await props.params).itemId;
+  console.log('hello world', itemId);
+
+  // create a url with the itemId inside
+  // name = itemId
 
   const items = await getItemInsecure(itemId);
-  // const items = await getItemId(Number((await props.params).itemId));
-  console.log('items: ', items);
+  console.log('ITEM', items);
+
+  // items = array with infos about the product
+  const productName = []
+    .concat(...Object.values(items))[1]
+    .split(' ')
+    .join('-');
+
+  const productDescription = [].concat(...Object.values(items))[2];
+
   const itemCommentsCookie = await getCookie('itemsComments', count);
 
   let itemComments = parseJson(itemCommentsCookie) || [];
@@ -29,35 +39,18 @@ export default async function SingleItemPage(props) {
     itemComments = [];
   }
 
-  // const productId = items.map((item) => {
-  //   return item.id;
-  //   // return <div key={`item-${item.id}`}>{item.id}</div>;
-  // });
+  console.log('Rendering SetCookieForm with productName:', productName);
 
   return (
     <>
-      {/* {productId} */}
-      {/* <div>{itemName}</div> */}
-      {/* <div>
-        {items.map((item) => {
-          console.log('items Name test', item.id);
-          return <div key={`item-${item.id}`}>{item.id}</div>;
-        })}
-      </div> */}
-
-      {/* <Image
-        src={`/images/${item.name}.webp`}
-        alt={imageName}
+      <Image
+        src={`/images/${productName}.webp`}
+        alt={productName}
         width={1000}
         height={1000}
-      /> */}
-
-      {/*
-      <h1>{imageName}</h1>
-      <p>Item Description:{item.description}</p> */}
-      {/* <ItemCommentForm itemId={item.id} /> */}
-      <SetCookieForm />
-      {/* <CookieStorage /> */}
+      />
+      {productDescription}
+      <SetCookieForm productName={productName} />
     </>
   );
 }

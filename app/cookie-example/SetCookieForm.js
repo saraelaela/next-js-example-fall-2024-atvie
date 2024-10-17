@@ -3,11 +3,13 @@
 import { useState } from 'react';
 import { createCookie } from './actions';
 
-export default function SetCookieForm() {
+export default function SetCookieForm(props) {
   const [cookieValue, setCookieValue] = useState(0);
+  console.log('Received productName hey:', props.productName);
 
   return (
     <form>
+      {/* {props.productName} */}
       <input
         value={cookieValue}
         onChange={(event) => setCookieValue(event.currentTarget.value)}
@@ -23,7 +25,9 @@ export default function SetCookieForm() {
       >
         -
       </button>
-      <button formAction={() => createCookie(cookieValue)}>Add to Cart</button>
+      <button formAction={() => createCookie(props.productName, cookieValue)}>
+        Add to Cart
+      </button>
     </form>
   );
 }

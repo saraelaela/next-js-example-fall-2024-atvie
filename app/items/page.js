@@ -14,7 +14,6 @@ export default async function Items() {
     itemComments = [];
   }
   const items = await getItemsInsecure();
-  console.log('test', items);
 
   return (
     <div className={styles.root}>
