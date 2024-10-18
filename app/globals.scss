@@ -9,6 +9,7 @@ body {
   font-family: -apple-system, 'system-ui', 'Segoe UI', 'Noto Sans', Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   background: var(--color-background);
+  margin: 0 auto;
   // Avoid fixed footer obscuring content
   // padding-bottom: 50px;
 }
@@ -16,17 +17,60 @@ body {
 a {
   color: black;
 }
+.headElement {
+  position: relative;
+  // background-color: blue;
 
-nav {
-  width: 100vw;
+  // background-size: cover; // Ensures the image covers the container
+  // background-position: center; // Centers the image
+  background-attachment: fixed; // Makes the image stay fixed while scrolling
+  overflow: hidden;
+  min-height: 400px; // Adjust the height as necessary
+  width: 100%;
+  z-index: -1000;
+}
+
+.backgroundContainer {
+  position: fixed;
+  // background-color: pink;
+  min-height: 400px; // Adjust the height as necessary
+  // width: 100%;
+  // z-index: -1000;
+}
+
+.backgroundVideo {
+  // position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: fill; // Ensures the video covers the container
+  // transform: translate(-50%, -50%); // Centers the video
+  z-index: -1; // Keeps the video behind other content
+}
+.Logo {
+  position: absolute;
+  padding-bottom: 5rem;
+  // position: absolute;
+  font-size: 25vw;
+  font-weight: 500;
+  color: white;
+  mix-blend-mode: difference;
+  text-transform: uppercase;
+}
+
+nav,
+.navClass {
+  // position: relative;
+  z-index: 10;
+  top: 80vh;
+  width: 97vw;
   height: 2rem;
   background: var(--color-layout);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  bottom: 0;
-  padding-bottom: 1rem;
-  position: absolute;
+  padding: 0.5rem 2rem 1rem 2rem;
   border-bottom: 1px solid black;
 
   > div {

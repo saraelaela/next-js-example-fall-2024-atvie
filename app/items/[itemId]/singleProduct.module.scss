@@ -1,0 +1,42 @@
+.imageContainer {
+  position: fixed;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  img {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+}
+
+.descriptionWrapper {
+  background-color: white;
+  // top: 60vh;
+  position: relative;
+  height: 40vw;
+  padding: 3rem 3rem 3rem 3rem;
+  display: flex;
+}
+
+// .descriptionContainer {
+// }
+
+.descriptionCard {
+  width: 100%;
+  padding: 0 0 0 15vw;
+  width: 30vw;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}

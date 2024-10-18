@@ -6,10 +6,10 @@ import { getItemInsecure } from '../../../database/items';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 import SetCookieForm from '../../cookie-example/SetCookieForm';
+import RootLayout from '../../layout';
+import styles from './singleProduct.module.scss';
 
 export default async function SingleItemPage(props) {
-
-
   const itemId = (await props.params).itemId;
   console.log('hello world', itemId);
 
@@ -42,15 +42,36 @@ export default async function SingleItemPage(props) {
   console.log('Rendering SetCookieForm with productName:', productName);
 
   return (
-    <>
-      <Image
-        src={`/images/${productName}.webp`}
-        alt={productName}
-        width={1000}
-        height={1000}
-      />
-      {productDescription}
-      <SetCookieForm productName={productName} />
-    </>
+    <RootLayout
+      hasBackground={true}
+      backgroundContent={
+        <video
+          loop
+          muted
+          autoPlay
+          src="/images/item3-video.mp4"
+          preload="auto"
+          type="video/mp4"
+          className="backgroundVideo"
+        />
+      }
+      navClass={styles.nav}
+    >
+      <div className={styles.descriptionWrapper}>
+        <Image
+          src={`/images/${productName}.webp`}
+          alt={productName}
+          width={500}
+          height={500}
+        />{' '}
+        <div className={styles.descriptionCard}>
+          <h3>{productName}</h3>
+          <div className={styles.description}>
+            {productDescription}
+            <SetCookieForm productName={productName} />
+          </div>
+        </div>
+      </div>
+    </RootLayout>
   );
 }
