@@ -8,6 +8,8 @@
     "dev": "next dev",
     "lint": "next lint",
     "migrate": "ley --require tsx/cjs",
+    "migrate:up": "ley up",
+    "migrate:status": "ley status",
     "start": "next start"
   },
   "dependencies": {

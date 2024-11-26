@@ -27,11 +27,11 @@ export const metadata = {
 export default function RootLayout({
   children,
   hasBackground,
-  backgroundContent, // New prop for dynamic background content
+  backgroundContent, // dynamic background
   backgroundClass = '',
   backgroundStyle = {},
-  navClass = '', // Optional class for dynamic nav styling
-  navStyle = {}, // Optional style object for dynamic nav styling
+  navClass = '', // dynamic nav styling
+  navStyle = {}, // dynamic nav styling w/ inline css
 }) {
   return (
     <html lang="en">

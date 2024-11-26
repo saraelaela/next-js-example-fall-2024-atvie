@@ -25,7 +25,7 @@ a {
   // background-position: center; // Centers the image
   background-attachment: fixed; // Makes the image stay fixed while scrolling
   overflow: hidden;
-  min-height: 400px; // Adjust the height as necessary
+  min-height: 400px;
   width: 100%;
   z-index: -1000;
 }
@@ -33,7 +33,7 @@ a {
 .backgroundContainer {
   position: fixed;
   // background-color: pink;
-  min-height: 400px; // Adjust the height as necessary
+  min-height: 400px;
   // width: 100%;
   // z-index: -1000;
 }
@@ -44,14 +44,12 @@ a {
   left: 50%;
   width: 100%;
   height: 100%;
-  object-fit: fill; // Ensures the video covers the container
-  // transform: translate(-50%, -50%); // Centers the video
-  z-index: -1; // Keeps the video behind other content
+  object-fit: fill;
+  z-index: -1;
 }
 .Logo {
   position: absolute;
   padding-bottom: 5rem;
-  // position: absolute;
   font-size: 25vw;
   font-weight: 500;
   color: white;
@@ -61,7 +59,6 @@ a {
 
 nav,
 .navClass {
-  // position: relative;
   z-index: 10;
   top: 80vh;
   width: 97vw;

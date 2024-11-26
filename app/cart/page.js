@@ -4,7 +4,7 @@ import { getItemsInsecure } from '../../database/items';
 import { getAllCookies, getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
-export default async function Items(props) {
+export default async function cart(props) {
   const items = await getItemsInsecure();
   console.log('test', items);
 
